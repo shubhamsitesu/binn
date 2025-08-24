@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Pagina Niet Gevonden | BinnenBereik.com</title>
+    <meta name="description" content="De pagina die u zoekt bestaat niet. Ga terug naar de homepage van BinnenBereik of gebruik onze zoekfunctie.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #f39c12;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: #fff;
+        }
+        
+        /* Header Styles */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* 404 Page Styles */
+        .error-404 {
+            padding: 150px 0 100px;
+            text-align: center;
+            background: linear-gradient(rgba(26, 58, 95, 0.05), rgba(26, 58, 95, 0.1)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .error-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+        }
+        
+        .error-code span {
+            color: var(--secondary);
+        }
+        
+        .error-message {
+            font-size: 32px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .error-description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .error-icon {
+            font-size: 80px;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .error-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .search-box {
+            max-width: 500px;
+            margin: 40px auto 0;
+            position: relative;
+        }
+        
+        .search-form {
+            display: flex;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .search-btn {
+            background: var(--secondary);
+            color: #fff;
+            border: none;
+            padding: 0 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background: #e67e22;
+        }
+        
+        .helpful-links {
+            margin-top: 60px;
+        }
+        
+        .helpful-links h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .link-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .link-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .link-item i {
+            font-size: 30px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .link-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .link-item p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 70px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-col p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 0;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.5s ease;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            nav ul li a {
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .error-404 {
+                padding: 100px 0 80px;
+            }
+            
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-message {
+                font-size: 24px;
+            }
+            
+            .error-description {
+                font-size: 16px;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .error-code {
+                font-size: 60px;
+            }
+            
+            .error-message {
+                font-size: 20px;
+            }
+            
+            .error-icon {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/50" alt="BinnenBereik Logo">
+                <h1>Binnen<span>Bereik</span></h1>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#over-ons">Over Ons</a></li>
+                    <li><a href="index.html#diensten">Diensten</a></li>
+                    <li><a href="index.html#tarieven">Tarieven</a></li>
+                    <li><a href="index.html#ervaringen">Ervaringen</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 404 Error Page -->
+    <section class="error-404">
+        <div class="container">
+            <div class="error-content">
+                <div class="error-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="error-code">4<span>0</span>4</div>
+                <h2 class="error-message">Pagina Niet Gevonden</h2>
+                <p class="error-description">
+                    Het spijt ons, maar de pagina die u zoekt bestaat niet. Misschien is de pagina verplaatst, verwijderd of heeft u een verkeerde URL ingevoerd.
+                </p>
+                
+                <div class="error-actions">
+                    <a href="index.html" class="btn">Terug naar Home</a>
+                    <a href="index.html#contact" class="btn btn-outline">Neem Contact Op</a>
+                </div>
+                
+                <div class="search-box">
+                    <form class="search-form" action="https://www.google.com/search" method="get" target="_blank">
+                        <input type="hidden" name="sitesearch" value="binnenbereik.com">
+                        <input type="text" class="search-input" name="q" placeholder="Zoek op BinnenBereik.com..." required>
+                        <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                
+                <div class="helpful-links">
+                    <h3>Misschien zoekt u naar:</h3>
+                    <div class="links-grid">
+                        <div class="link-item">
+                            <i class="fas fa-home"></i>
+                            <h4>Home</h4>
+                            <p>Terug naar de homepage</p>
+                            <a href="index.html">Bezoek</a>
+                        </div>
+                        <div class="link-item">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>Diensten</h4>
+                            <p>Onze BinnenBereik diensten</p>
+                            <a href="index.html#diensten">Bekijk</a>
+                        </div>
+                        <div class="link-item">
+                            <i class="fas fa-euro-sign"></i>
+                            <h4>Tarieven</h4>
+                            <p>BinnenBereik prijzen</p>
+                            <a href="index.html#tarieven">Bekijk</a>
+                        </div>
+                        <div class="link-item">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Contact</h4>
+                            <p>Neem contact met ons op</p>
+                            <a href="index.html#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Over BinnenBereik</h3>
+                    <p>BinnenBereik is uw partner in kwaliteit en betrouwbaarheid. Met jarenlange ervaring zorgen we ervoor dat u altijd <strong>binnen bereik</strong> bent van de beste service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Snelle Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#over-ons">Over Ons</a></li>
+                        <li><a href="index.html#diensten">Diensten</a></li>
+                        <li><a href="index.html#tarieven">Tarieven</a></li>
+                        <li><a href="index.html#ervaringen">Ervaringen</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Onze Diensten</h3>
+                    <ul>
+                        <li><a href="#">BinnenBereik Consultancy</a></li>
+                        <li><a href="#">BinnenBereik Support</a></li>
+                        <li><a href="#">BinnenBereik Training</a></li>
+                        <li><a href="#">BinnenBereik Implementatie</a></li>
+                        <li><a href="#">BinnenBereik Beheer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adres</h4>
+                            <p>Keizersgracht 123<br>1016 CJ Amsterdam</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Telefoon</h4>
+                            <p>+31 20 123 4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>info@binnenbereik.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 BinnenBereik.com. Alle rechten voorbehouden. | BinnenBereik - Altijd Binnen Bereik</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,12 +1,10 @@
 User-agent: *
-Disallow: 
-
-# Allow all search engines to access the entire site
-User-agent: Googlebot
 Allow: /
 
-User-agent: Bingbot
-Allow: /
+# Block common bot paths
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /~joe/
 
 # Sitemap location
 Sitemap: https://binnenbereik.com/sitemap.xml

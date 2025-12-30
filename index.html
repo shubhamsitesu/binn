@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binnen Bereik | verkoop voor $999 - Dé Oplossing Voor Jouw Behoeften - BinnenBereik.com</title>
-    <meta name="description" content="Ontdek BinnenBereik: De meest betrouwbare provider in Nederland. 24/7 bereikbaar, scherpe tarieven en uitstekende service. BinnenBereik = Binnen Bereik van perfecte service.">
-    <meta name="keywords" content="BinnenBereik, Binnen Bereik, BinnenBereik.nl, BinnenBereik ervaringen, BinnenBereik review, BinnenBereik prijzen, BinnenBereik klantenservice">
+    <!-- Updated Title for better SEO consistency -->
+    <title>BinnenBereik | Dé Oplossing Voor Jouw Behoeften - Premium Service & Support</title>
+    <meta name="description" content="Ontdek BinnenBereik: De meest betrouwbare provider in Nederland. 24/7 bereikbaar, scherpe tarieven en uitstekende service. Update: Bekijk onze nieuwe diensten.">
+    <meta name="keywords" content="BinnenBereik, Binnen Bereik, BinnenBereik.nl, provider, consultancy, support, Nederland">
     
     <!-- Advanced SEO Tags -->
     <meta name="robots" content="index, follow">
@@ -49,7 +50,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data (Updated with Modified Date) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -107,105 +108,6 @@
       }
     }
     </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "BinnenBereik",
-      "image": "https://binnenbereik.com/img/og-image.jpg",
-      "@id": "https://binnenbereik.com",
-      "url": "https://binnenbereik.com",
-      "telephone": "+31-20-123-4567",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Keizersgracht 123",
-        "addressLocality": "Amsterdam",
-        "addressRegion": "NH",
-        "postalCode": "1016 CJ",
-        "addressCountry": "NL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 52.3676,
-        "longitude": 4.9041
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/binnenbereik",
-        "https://www.twitter.com/binnenbereik",
-        "https://www.linkedin.com/company/binnenbereik"
-      ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "BinnenBereik Consultancy",
-      "description": "Professioneel consultancy advies van BinnenBereik experts",
-      "provider": {
-        "@type": "Organization",
-        "name": "BinnenBereik"
-      },
-      "serviceType": "Consultancy",
-      "areaServed": "Netherlands",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "BinnenBereik Diensten",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "BinnenBereik Consultancy",
-              "description": "Professioneel consultancy advies van BinnenBereik experts"
-            },
-            "price": "79",
-            "priceCurrency": "EUR"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "BinnenBereik Support",
-              "description": "24/7 technische support van BinnenBereik"
-            },
-            "price": "29",
-            "priceCurrency": "EUR"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "BinnenBereik Training",
-              "description": "Verbeter uw vaardigheden met BinnenBereik trainingen"
-            },
-            "price": "149",
-            "priceCurrency": "EUR"
-          }
-        ]
-      }
-    }
-    </script>
-    
-    <!-- Additional SEO Meta Tags -->
-    <meta name="msvalidate.01" content="YOUR-BING-WEBMASTER-TOOLS-CODE">
-    <meta name="google-site-verification" content="YOUR-GOOGLE-SITE-VERIFICATION-CODE">
-    <meta name="p:domain_verify" content="YOUR-PINTEREST-SITE-VERIFICATION">
     
     <!-- DNS Prefetching for Performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -1008,7 +910,7 @@
         .breadcrumb {
             background: #f8f9fa;
             padding: 15px 0;
-            margin-bottom: 30px;
+            margin-bottom: 0; /* Removed margin for flush look */
         }
         
         .breadcrumb-list {
@@ -1800,7 +1702,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 BinnenBereik.com. Alle rechten voorbehouden. | BinnenBereik - Altijd Binnen Bereik</p>
+                <p>&copy; 2025 BinnenBereik.com. Alle rechten voorbehouden. | <span id="last-updated">Laatst geüpdatet: Laden...</span></p>
             </div>
         </div>
     </footer>
@@ -1944,29 +1846,11 @@
             });
         });
         
-        // Lazy loading for images
-        if ('IntersectionObserver' in window) {
-            const imgOptions = {
-                threshold: 0,
-                rootMargin: '0px 0px 50px 0px'
-            };
-            
-            const imgObserver = new IntersectionObserver((entries, imgObserver) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imgObserver.unobserve(img);
-                    }
-                });
-            }, imgOptions);
-            
-            const lazyImages = document.querySelectorAll('img.lazy');
-            lazyImages.forEach(img => {
-                imgObserver.observe(img);
-            });
-        }
+        // Dynamic Date for Footer (Important for SEO Freshness)
+        const dateElement = document.getElementById('last-updated');
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const today = new Date();
+        dateElement.innerText = "Laatst geüpdatet: " + today.toLocaleDateString('nl-NL', options);
         
         // Domain Sale Popup
         document.addEventListener('DOMContentLoaded', function() {
@@ -1997,14 +1881,5 @@
         gtag('js', new Date());
         gtag('config', 'GA_TRACKING_ID');
     </script>
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-    
-    <!-- End Google Tag Manager -->
 </body>
 </html>
